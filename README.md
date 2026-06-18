@@ -1,7 +1,3 @@
-我为你设计了一份适配该项目的 README 文档，结构清晰，涵盖项目简介、数据说明、功能亮点、本地运行和云端部署指引，你可以直接使用或根据实际情况微调。
-
----
-
 # 2026年厄尔尼诺事件：赤道太平洋海温与地转流可视化分析
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](你的streamlit应用链接)
