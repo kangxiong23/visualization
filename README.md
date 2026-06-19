@@ -1,6 +1,6 @@
 # 2026年厄尔尼诺事件：赤道太平洋海温与地转流可视化分析
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](你的streamlit应用链接)
+[![Streamlit App](https://visualization-mzoyeqwa6qmat2u3yi4wf7.streamlit.app/)]
 
 ## 📌 项目简介
 
