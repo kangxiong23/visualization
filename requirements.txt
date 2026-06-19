@@ -1,0 +1,9 @@
+streamlit
+xarray
+netcdf4
+scipy
+matplotlib
+pandas
+numpy
+pathlib
+datetime
