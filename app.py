@@ -28,7 +28,36 @@ HOV_END_DATE = datetime(2026, 5, 31)
 PROFILE_LON_SLICE = slice(int(LON_MIN), int(LON_MAX))
 
 # ================== 设置中文字体 ==================
-plt.rcParams['font.sans-serif'] = ['SimHei', 'DejaVu Sans', 'Microsoft YaHei', 'WenQuanYi Micro Hei']
+import os
+import matplotlib.font_manager as fm
+
+# ================== 设置中文字体 ==================
+# 指定根目录下的字体文件（请根据实际文件名修改）
+font_path = "NotoSerifCJKsc-Regular.otf"
+
+# 备选字体列表（当自定义字体加载失败时使用）
+fallback_fonts = ['SimHei', 'DejaVu Sans', 'Microsoft YaHei', 'WenQuanYi Micro Hei']
+
+if os.path.exists(font_path):
+    try:
+        # 将字体添加到 matplotlib 的字体管理器
+        fm.fontManager.addfont(font_path)
+        # 获取字体的实际名称（用于 rcParams）
+        prop = fm.FontProperties(fname=font_path)
+        font_name = prop.get_name()
+        if font_name:
+            # 把自定义字体放在第一位
+            fallback_fonts.insert(0, font_name)
+        else:
+            # 如果获取失败，使用文件名（不含扩展）作为备选
+            base_name = os.path.splitext(os.path.basename(font_path))[0]
+            fallback_fonts.insert(0, base_name)
+    except Exception as e:
+        # 如果加载失败，打印错误信息（不影响运行）
+        print(f"字体加载失败：{e}")
+
+# 应用字体设置
+plt.rcParams['font.sans-serif'] = fallback_fonts
 plt.rcParams['axes.unicode_minus'] = False
 
 # ================== 自定义 CSS 美化 ==================
